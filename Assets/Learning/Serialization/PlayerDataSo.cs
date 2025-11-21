@@ -1,3 +1,5 @@
+using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace Serialization.Save {
@@ -14,6 +16,20 @@ namespace Serialization.Save {
             PlayerDataSo playerDataSo = (PlayerDataSo)target;
             if(GUILayout.Button("Save")) {
                 SaveSystem.Save(playerDataSo.playerData);
+            }
+            if(GUILayout.Button("Load")) {
+                try {
+                    playerDataSo.playerData = SaveSystem.Load<PlayerData>();
+                }
+                catch(Exception e) {
+                    Debug.Log(e);
+                    playerDataSo.playerData = new PlayerData();
+                }
+
+                EnemyData enemyData = SaveSystem.Load<EnemyData>();
+            }
+            if(GUILayout.Button("Save SO asset only")) {
+                AssetDatabase.SaveAssets();
             }
         }
     }
