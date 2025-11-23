@@ -1,14 +1,8 @@
 {
-    "name": "fg.2025",
+    "name": "fg.patterns",
     "rootNamespace": "",
     "references": [
-        "Unity.InputSystem",
-        "Unity.TextMeshPro",
-        "com.intothedev.savesystem",
-        "Unity.Addressables",
-        "Unity.ResourceManager",
-        "fg.2025.advanced",
-        "fg.patterns"
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
